@@ -8,6 +8,7 @@ export default defineConfig({
       react(),
       tailwindcss()
   ],
+  base: '/portfolio',
   server: {
     hmr: true,
     host: '0.0.0.0',
