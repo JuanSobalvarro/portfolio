@@ -2,12 +2,12 @@ import React from "react";
 
 function Hero() {
     return (
-        <section className="hero bg-blue-100 dark:bg-gray-900 text-white dark:text-gray-100 flex items-center justify-center pb-10">
+        <section className="hero bg-blue-100 dark:bg-slate-800 text-white dark:text-gray-100 flex items-center justify-center pb-10">
             <div className="text-center relative z-10">
                 <img
                     src="/logos/face.svg"
                     alt="Your Face"
-                    className={`rounded-full w-48 h-32 mb-4 mx-auto sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 transition-all ${localStorage.getItem('theme') === 'dark' ? 'filter invert' : ''} `}
+                    className={`rounded-full w-48 h-32 mb-4 mx-auto sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 transition-all dark:filter dark:invert`}
                 />
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-black dark:text-white">
                     Software, Backend, DevOps & Lead Developer
