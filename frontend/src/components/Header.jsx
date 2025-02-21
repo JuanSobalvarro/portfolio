@@ -21,7 +21,7 @@ function Header() {
   return (
     <header className="bg-white dark:bg-gray-900 text-black dark:text-white p-6 flex justify-between items-center shadow-md transition-colors">
       <div className="flex items-center">
-        <img src="/logos/hexagon.svg" alt="Hexagon Logo" className={`w-12 h-12 mr-4 ${darkMode ? 'filter invert' : ''}`}/>
+        <img src="/portfolio/logos/hexagon.svg" alt="Hexagon Logo" className={`w-12 h-12 mr-4 ${darkMode ? 'filter invert' : ''}`}/>
         <div>
           <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">JuSo | Portfolio</h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">By Juan Sobalvarro</p>
