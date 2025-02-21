@@ -1,0 +1,13 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon Outline -->
+  <polygon points="150,20 270,85 270,215 150,280 30,215 30,85"
+           stroke="black" fill="none" stroke-width="13" stroke-linejoin="round"/>
+
+  <!-- Centered Cube Inside -->
+  <polygon points="90,110 150,145 210,110 150,75"
+           stroke="black" fill="none" stroke-width="13" stroke-linejoin="round"/>
+  <polygon points="90,110 90,180 150,215 150,145"
+           stroke="black" fill="none" stroke-width="13" stroke-linejoin="round"/>
+  <polygon points="210,110 210,180 150,215 150,145"
+           stroke="black" fill="none" stroke-width="13" stroke-linejoin="round"/>
+</svg>
