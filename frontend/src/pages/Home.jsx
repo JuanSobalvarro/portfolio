@@ -1,24 +1,17 @@
 import React from "react";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+
 
 function Home() {
     return (
         <div>
             {/* Header Section */}
-            <header className="bg-white text-black p-6 flex items-center">
-                <img src="/logos/hexagon.svg" alt="Hexagon Logo" className="w-12 h-12 mr-4" />
-                <div>
-                    <h1 className="text-4xl font-bold">JuSo | Portfolio</h1>
-                    <p>By Juan Sobalvarro</p>
-                </div>
-            </header>
+            <Header />
 
             {/* Hero Section */}
-            <section className="hero bg-blue-600 text-white flex items-center justify-center h-96">
-                <div className="text-center">
-                    <img src="/logos/face.svg" alt="Your Face" className="rounded-full w-48 h-48 mb-4" />
-                    <p className="text-lg">Software, Backend, DevOps, and Lead Developer</p>
-                </div>
-            </section>
+            <Hero />
+
 
             {/* About Me Section */}
             <section className="about py-16 bg-gray-100">
