@@ -1,0 +1,21 @@
+services:
+#  Frontend service using vite + react
+    frontend:
+        build:
+          context: ./frontend
+        env_file:
+          - .env
+        ports:
+        - "5173:5173"
+        volumes:
+        - ./frontend:/app
+        - frontend_node_modules:/app/node_modules
+        command: >
+          sh -c "if [ ${DEBUG} = 'true' ]; then
+            npm run dev
+          else
+            npm run build
+          fi"
+
+volumes:
+    frontend_node_modules:
