@@ -1,0 +1,52 @@
+.logo-container {
+  animation: floatContainer 6s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.scene {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  perspective: calc(var(--size) * 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube {
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(20deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border: calc(var(--size) * 0.1) solid var(--color);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 calc(var(--size) * 0.3) var(--color), inset 0 0 calc(var(--size) * 0.15) var(--color);
+}
+
+.front  { transform: translateZ(calc(var(--size) / 2)); }
+.back   { transform: rotateY(180deg) translateZ(calc(var(--size) / 2)); }
+.right  { transform: rotateY(90deg) translateZ(calc(var(--size) / 2)); }
+.left   { transform: rotateY(-90deg) translateZ(calc(var(--size) / 2)); }
+.top    { transform: rotateX(90deg) translateZ(calc(var(--size) / 2)); }
+.bottom { transform: rotateX(-90deg) translateZ(calc(var(--size) / 2)); }
+
+.hexagon-svg {
+  filter: drop-shadow(0 0 10px var(--color));
+  transition: filter 0.3s ease;
+}
+
+.logo-container:hover .hexagon-svg {
+  filter: drop-shadow(0 0 20px var(--color));
+}
+
+@keyframes floatContainer {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
