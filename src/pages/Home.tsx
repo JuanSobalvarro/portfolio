@@ -26,29 +26,25 @@ function Home(): React.JSX.Element {
   };
 
   return (
-    <div className="h-screen w-screen bg-black overflow-hidden flex flex-col">
+  <div className="relative h-screen w-screen bg-black overflow-x-hidden overflow-y-auto">
+    {/* Background stays put */}
+    <div className="fixed inset-0 z-0">
+      <WaveBackground />
+    </div>
+
+    {/* UI Layer floats on top */}
+    <div className="relative z-10 flex flex-col min-h-screen">
       <Header />
-
-      <main className="flex-1 px-6 pb-6">
-        <div className="relative w-full h-full bg-black border border-white/10 overflow-hidden rounded-xl">
-          <WaveBackground />
-
-          {/* 🧭 UI Layer */}
-          <div className="relative z-10 w-full h-full flex flex-col">
-            <Navigation active={active} setActive={setActive} />
-
-            {/* 📦 CONTENT */}
-            <section className="relative z-10 w-full h-full flex flex-col">
-              <div key={active} className="section-fade-in w-full max-w-6xl">
-                {renderSection()}
-              </div>
-            </section>
-          </div>
-
+      <Navigation active={active} setActive={setActive} />
+      
+      <main className="flex-1 flex items-center justify-center p-6">
+        <div key={active} className="section-fade-in w-full">
+          {renderSection()}
         </div>
       </main>
     </div>
-  );
+  </div>
+);
 }
 
 export default Home;
