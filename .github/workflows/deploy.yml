@@ -31,10 +31,10 @@ jobs:
       - name: Finalize GitHub Deploy
         uses: actions/deploy-pages@v4
 
-      - name: Deploy to Cloudflare
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: 'portfolio'
-          directory: 'dist'
+    #   - name: Deploy to Cloudflare
+    #     uses: cloudflare/pages-action@v1
+    #     with:
+    #       apiToken: ${{ secrets.CF_API_TOKEN }}
+    #       accountId: ${{ secrets.CF_ACCOUNT_ID }}
+    #       projectName: 'portfolio'
+    #       directory: 'dist'
