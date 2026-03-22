@@ -8,7 +8,6 @@ export default function Section({ children }: SectionProps): React.JSX.Element {
   return (
     <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center">
       
-      {/* 🧊 GLASS WRAPPER */}
       <div className="relative w-full max-h-[80vh] rounded-[2.5rem] p-[1px] overflow-hidden">
         
         <div 

@@ -1,5 +1,4 @@
 import type { PortfolioContent, ContactInfo, Project, SkillCategory } from '@/types';
-import { get_asset } from '@/services/assets';
 
 export const OWNER = {
   name: 'Juan Sobalvarro',
@@ -131,6 +130,64 @@ export const PROJECTS: Project[] = [
       'User-friendly interface for medical staff',
       'Secure database management',
     ],
+  },
+  {
+    id: 'ranking',
+    title: 'Table Tennis Ranking System',
+    description: 'A ranking system for university table tennis players.',
+    longDescription: 'A web application that allows university table tennis players to track their rankings and match history. I developed the backend using Django, created a responsive frontend with ReactJS, and implemented features such as player profiles, match recording, and dynamic ranking calculations based on match outcomes.',
+    technologies: ['Python', 'Django', 'ReactJS', 'PostgreSQL'],
+    tags: ['sports', 'webapp'],
+    status: 'completed',
+    featured: false,
+    year: 2024,
+    images: [
+      { url: '/projects/ttranking/home.png', type: 'hero' },
+      { url: '/projects/ttranking/profile.png', type: 'gallery' },
+      { url: '/projects/ttranking/ranking.png', type: 'gallery' },
+      { url: '/projects/ttranking/top.png', type: 'gallery' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/tt-ranking-system' },
+    ]
+  },
+  {
+    id: 'sudoku',
+    title: 'Sudoku Qt',
+    description: 'A Sudoku game built with Qt5.',
+    longDescription: 'A desktop application that I created using C++ and the Qt5 framework when I was first learning C++. The game features simple mechanics to generate and solve a Sudoku puzzle.',
+    technologies: ['C++', 'Qt5'],
+    tags: ['games', 'desktop'],
+    status: 'completed',
+    featured: false,
+    year: 2024,
+    images: [
+      { url: '/projects/sudoku/sudoku.png', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/SudokuQt' },
+    ]
+  },
+  {
+    id: 'ecollecta',
+    title: 'Ecollecta',
+    description: 'A static website for university species collection with physical QR on specimens.',
+    longDescription: 'Minimal version of a design of an App where i simplified the data collection processs for the univsity species collection. The website is static and serves as a digital catalog for the specimens, which are tagged with QR codes that link to their respective pdfs on the site.',
+    technologies: ['ReactTS', 'Vite'],
+    tags: ['webapp', 'nature'],
+    status: 'in-progress',
+    featured: true,
+    year: 2026,
+    images: [
+      { url: '/projects/ecollecta/home.png', type: 'hero' },
+      { url: '/projects/ecollecta/archive.png', type: 'gallery' },
+      { url: '/projects/ecollecta/pdf.png', type: 'gallery' },
+      { url: '/projects/ecollecta/qr.png', type: 'gallery' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Programming-Club-ULSA/ecollecta-minimal' },
+      { label: 'Live Site', url: 'https://programming-club-ulsa.github.io/ecollecta-minimal/' },
+    ]
   }
 ];
 

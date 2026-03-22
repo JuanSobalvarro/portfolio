@@ -4,7 +4,7 @@ import WaveBackground from '@/components/WaveBackground';
 import {
   AboutSection,
   ContactSection,
-  ExperienceSection,
+  // ExperienceSection,
   ProjectsSection,
 } from '@/components/sections';
 import type { SectionId } from '@/types';
@@ -32,11 +32,14 @@ function Home(): React.JSX.Element {
           {/* BACKGROUND LAYER */}
           <div className="absolute inset-0 z-0">
             <WaveBackground />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            
+            {/* REDUCED MASK: transparent_0% to transparent_100% (or very light black) */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
+            
+            {/* LIGHTER BOTTOM GRADIENT: from black/40 instead of 60 */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
 
-          {/* 🎯 STATIC CONTENT LAYER (No more overflow here) */}
           <div className="absolute inset-0 z-10 flex items-center justify-center p-6">
             <div key={active} className="section-fade-in w-full h-full flex items-center justify-center">
               {renderSection()}

@@ -11,18 +11,25 @@ interface HeaderProps {
 
 function Header({ active, setActive }: HeaderProps): React.JSX.Element {
   return (
-    <header className="flex items-center justify-between px-6 py-4 md:px-10">
-      <div className="flex items-center">
-        <RotatingIcon className="mr-4 h-14 w-14" size="1.1rem" color="#f5f5f5" />
-        <div>
-          <h1 className="flex items-center text-2xl font-semibold tracking-tight text-white md:text-3xl">
+    <header className="grid grid-cols-[1fr_auto_1fr] items-center px-6 py-4 md:px-10 w-full">
+    
+      <div className="flex items-center justify-self-start">
+        <RotatingIcon className="mr-4 h-12 w-12 md:h-14 md:w-14" size="1.1rem" color="#f5f5f5" />
+        <div className="hidden sm:block"> {/* Hide name on very small screens to keep center clean */}
+          <h1 className="flex items-center text-xl font-semibold tracking-tight text-white md:text-2xl">
             {OWNER.title}
-            <span className="ml-2 inline-block h-6 w-[2px] bg-white/70 animate-pulse" />
+            <span className="ml-2 inline-block h-5 w-[2px] bg-white/70 animate-pulse" />
           </h1>
-          <p className="mt-1 text-sm text-white/70">By {OWNER.name}</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">By {OWNER.name}</p>
         </div>
       </div>
-      <Navigation active={active} setActive={setActive} />
+
+      <div className="justify-self-center">
+        <Navigation active={active} setActive={setActive} />
+      </div>
+
+      {/* future theme switcher */}
+
     </header>
   );
 }

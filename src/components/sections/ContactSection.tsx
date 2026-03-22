@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from './Section';
 import { CONTACT_INFO } from '@/constants';
 
 interface ContactRow {
@@ -27,11 +28,11 @@ export default function ContactSection(): React.JSX.Element {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-3xl rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-sm md:p-10">
+    <Section >
       <div className="mb-6 space-y-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-white/50">Contact</p>
+        {/* <p className="text-xs uppercase tracking-[0.2em] text-white/50">How to reach me</p> */}
         <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          Let&apos;s Build Something
+          Contact Me!
         </h2>
         <p className="text-sm text-white/65">
           Open to collaboration and always excited to connect with fellow developers, potential clients, or anyone interested in tech. Feel free to reach out!
@@ -56,6 +57,6 @@ export default function ContactSection(): React.JSX.Element {
           </a>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
