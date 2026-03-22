@@ -31,7 +31,7 @@ export default function ContactSection(): React.JSX.Element {
     <Section >
       <div className="mb-6 space-y-2">
         {/* <p className="text-xs uppercase tracking-[0.2em] text-white/50">How to reach me</p> */}
-        <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white md:text-4xl">
           Contact Me!
         </h2>
         <p className="text-sm text-white/65">
@@ -46,12 +46,12 @@ export default function ContactSection(): React.JSX.Element {
             href={item.href}
             target={item.href.startsWith('mailto:') ? undefined : '_blank'}
             rel={item.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-            className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05]"
+            className="group flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:justify-between rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05]"
           >
             <span className="text-xs uppercase tracking-[0.14em] text-white/50">
               {item.label}
             </span>
-            <span className="text-sm text-white/75 transition-colors duration-300 group-hover:text-white">
+            <span className="text-sm text-white/75 transition-colors duration-300 group-hover:text-white break-all sm:break-normal">
               {item.value}
             </span>
           </a>

@@ -34,8 +34,8 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
 
   return (
     <>
-      <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-start">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-6 md:gap-10 lg:grid-cols-[1.4fr_1fr] items-start">
+        <div className="flex flex-col gap-4 md:gap-6">
           <button 
             onClick={() => setIsExpanded(true)}
             className="group relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#0a0c10] cursor-zoom-in transition-all duration-500 shadow-2xl"
@@ -58,12 +58,12 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
             </div>
           </button>
 
-          <div className="flex gap-4 h-20">
+          <div className="flex gap-3 md:gap-4 h-16 sm:h-20 overflow-x-auto pb-1">
             {project.images?.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImageIndex(i)}
-                className={`flex-1 rounded-xl border-2 overflow-hidden transition-all duration-300 ${
+                className={`min-w-20 sm:min-w-0 flex-1 rounded-xl border-2 overflow-hidden transition-all duration-300 ${
                   activeImageIndex === i ? 'border-blue-500 bg-blue-500/20 scale-105' : 'border-white/5 opacity-50 hover:opacity-100 hover:border-white/20'
                 }`}
               >
@@ -73,23 +73,23 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
           </div>
         </div>
 
-        <div className="flex flex-col justify-between h-full py-2">
-          <div className="space-y-8">
+        <div className="flex flex-col justify-between h-full py-1 md:py-2">
+          <div className="space-y-6 md:space-y-8">
             <div className="space-y-4">
-              <div className="flex items-center gap-4 text-[10px] font-mono tracking-[0.4em]">
+              <div className="flex items-center gap-3 md:gap-4 text-[10px] font-mono tracking-[0.2em] sm:tracking-[0.4em]">
                 <span className="text-blue-400 font-bold">[{project.year || '2026'}]</span>
                 <span className="uppercase text-gray-500">{project.status}</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-medium text-white tracking-tighter leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium text-white tracking-tighter leading-tight break-words">
                 {project.title}
               </h1>
-              <p className="text-lg text-gray-400 leading-relaxed font-normal max-w-prose">
+              <p className="text-base md:text-lg text-gray-400 leading-relaxed font-normal max-w-prose">
                 {project.longDescription || project.description}
               </p>
             </div>
 
-            <div className="pt-8 border-t border-white/10 space-y-5">
-              <h4 className="text-[10px] uppercase tracking-[0.5em] text-blue-400/60 font-bold">Stack Trace</h4>
+            <div className="pt-6 md:pt-8 border-t border-white/10 space-y-4 md:space-y-5">
+              <h4 className="text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.5em] text-blue-400/60 font-bold">Stack Trace</h4>
               <div className="flex flex-wrap gap-3">
                 {project.technologies.map(tech => (
                   <span key={tech} className="text-[10px] font-mono text-blue-100 bg-blue-500/10 px-4 py-1.5 rounded-md border border-blue-500/20 uppercase tracking-widest">
@@ -100,7 +100,7 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-10 gap-y-6 pt-10 border-t border-white/10">
+          <div className="flex flex-wrap gap-x-5 md:gap-x-10 gap-y-4 md:gap-y-6 pt-6 md:pt-10 border-t border-white/10 mt-6 md:mt-8">
             {project.links?.map((link) => {
               const isGithub = link.type === 'github';
               const isDemo = link.type === 'demo';
@@ -111,7 +111,7 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
                   href={link.url} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="text-[11px] font-mono flex items-center gap-3 group transition-all text-gray-400 hover:text-white"
+                  className="text-[10px] sm:text-[11px] font-mono flex items-center gap-2 sm:gap-3 group transition-all text-gray-400 hover:text-white"
                 >
                   <span className={`
                     w-2 h-2 rounded-full
@@ -121,7 +121,7 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
                     group-hover:scale-125 transition-transform
                   `} />
 
-                  <span className="tracking-[0.2em] uppercase font-bold text-gray-300 group-hover:text-white transition-colors">
+                  <span className="tracking-[0.1em] sm:tracking-[0.2em] uppercase font-bold text-gray-300 group-hover:text-white transition-colors">
                     {link.label}
                   </span>
 
@@ -158,13 +158,13 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
             animTrigger ? 'opacity-80' : 'opacity-0'
           }`} />
 
-          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 md:p-16">
+          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-16">
             <img
               src={activeImage.url}
               alt={activeImage.alt || project.title}
               onClick={(e) => e.stopPropagation()}
               className={`
-                max-w-[95vw] max-h-[80vh] 
+                max-w-[95vw] max-h-[75vh] md:max-h-[80vh] 
                 object-contain rounded-xl shadow-[0_0_100px_rgba(0,0,0,0.8)]
                 border border-white/10
                 transition-all duration-500 ease-out
@@ -172,7 +172,7 @@ export default function ProjectDetailView({ project }: { project: Project }): Re
               `}
             />
             
-            <div className={`absolute bottom-12 flex items-center gap-4 font-mono text-[10px] tracking-[0.5em] text-blue-400/40 transition-all duration-700 delay-300 ${
+            <div className={`absolute bottom-8 sm:bottom-12 flex items-center gap-4 font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.5em] text-blue-400/40 transition-all duration-700 delay-300 ${
               animTrigger ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}>
               <span className="uppercase">Press ESC to return</span>

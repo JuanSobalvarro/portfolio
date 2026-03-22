@@ -6,7 +6,7 @@ import { OWNER, PORTFOLIO_CONTENT, SKILLS } from '@/constants';
 export default function AboutSection(): React.JSX.Element {
   return (
     <Section>
-      <div className="grid gap-12 md:grid-cols-[220px_1fr] md:items-center">
+      <div className="grid gap-8 md:gap-12 md:grid-cols-[220px_1fr] md:items-center">
         <div className="mx-auto w-full max-w-[200px]">
           <div className="relative group">
             {/* soft glow that interacts with the glass */}
@@ -18,28 +18,28 @@ export default function AboutSection(): React.JSX.Element {
           </div>
         </div>
 
-        <div className="space-y-6 text-center md:text-left">
+        <div className="space-y-4 md:space-y-6 text-center md:text-left">
           <div className="space-y-2">
             <p className="text-[10px] uppercase tracking-[0.5em] text-white/30 font-bold">
               WHO AM I
             </p>
-            <h1 className="text-5xl font-light tracking-tighter text-white md:text-7xl lg:text-8xl">
+            <h1 className="text-4xl sm:text-5xl font-light tracking-tighter text-white md:text-7xl lg:text-8xl break-words">
               {OWNER.name}
             </h1>
           </div>
           
-          <p className="text-xl md:text-2xl font-medium text-white/90 leading-tight tracking-tight">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-white/90 leading-tight tracking-tight">
             {PORTFOLIO_CONTENT.bio}
           </p>
           
-          <p className="max-w-xl text-base leading-relaxed text-white/70 font-light">
+          <p className="max-w-xl text-sm sm:text-base leading-relaxed text-white/70 font-light mx-auto md:mx-0">
             {PORTFOLIO_CONTENT.message}
           </p>
         </div>
       </div>
 
-      <div className="mt-16 border-t border-white/10 pt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="mt-10 md:mt-16 border-t border-white/10 pt-8 md:pt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
           {SKILLS.map((category) => (
             <div key={category.name} className="space-y-4">
               <h2 className="text-[10px] uppercase tracking-[0.3em] text-blue-100/80 font-semibold">

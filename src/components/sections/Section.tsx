@@ -8,7 +8,7 @@ export default function Section({ children }: SectionProps): React.JSX.Element {
   return (
     <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center">
       
-      <div className="relative w-full max-h-[80vh] rounded-[2.5rem] p-[1px] overflow-hidden">
+      <div className="relative w-full max-h-full md:max-h-[80vh] rounded-2xl md:rounded-[2.5rem] p-[1px] overflow-hidden">
         
         <div 
           className="absolute inset-0 z-0 opacity-40"
@@ -17,13 +17,13 @@ export default function Section({ children }: SectionProps): React.JSX.Element {
           }}
         />
 
-        <div className="relative z-10 w-full rounded-[2.5rem] bg-black/80 backdrop-blur-xl overflow-hidden flex flex-col">
+        <div className="relative z-10 w-full rounded-2xl md:rounded-[2.5rem] bg-black/80 backdrop-blur-xl overflow-hidden flex flex-col">
           
           {/* Subtle Internal Glow */}
           <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/5 blur-[100px]" />
         
           <div 
-            className="overflow-y-auto custom-scrollbar px-8 md:px-14 py-20 max-h-[80vh] relative"
+            className="overflow-y-auto custom-scrollbar px-4 sm:px-8 md:px-14 py-8 sm:py-12 md:py-20 max-h-[calc(100dvh-13.5rem)] md:max-h-[80vh] relative"
             // style={{
             //   /* We adjust the mask to start later so the padding is visible */
             //   maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',

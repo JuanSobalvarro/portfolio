@@ -33,10 +33,8 @@ function Home(): React.JSX.Element {
           <div className="absolute inset-0 z-0">
             <WaveBackground />
             
-            {/* REDUCED MASK: transparent_0% to transparent_100% (or very light black) */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
             
-            {/* LIGHTER BOTTOM GRADIENT: from black/40 instead of 60 */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
 
