@@ -32,7 +32,7 @@ export default function AboutSection(): React.JSX.Element {
             {PORTFOLIO_CONTENT.bio}
           </p>
           
-          <p className="max-w-xl text-sm sm:text-base leading-relaxed text-white/70 font-light mx-auto md:mx-0">
+          <p className="max-w-3xl text-sm sm:text-base leading-relaxed text-white/70 font-light mx-auto md:mx-0">
             {PORTFOLIO_CONTENT.message}
           </p>
         </div>

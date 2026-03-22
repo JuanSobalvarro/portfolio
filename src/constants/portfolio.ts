@@ -191,6 +191,47 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: 'pingtrace',
+    title: 'PingTrace',
+    description: 'Network latency visualization tool.',
+    longDescription:
+      'A command line tool that can perform ping and traceroute operations to visualize network latency and path. Built entirely in C and compiled for windows. Project for my university networks course, focused on low-level network programming and system calls.',
+    technologies: ['C', 'WinSock', 'CMake'],
+    tags: ['network', 'visualization'],
+    status: 'completed',
+    featured: false,
+    year: 2023,
+    images: [
+      { url: '/projects/pingtrace/ping.png', type: 'hero' },
+      { url: '/projects/pingtrace/packet.png', type: 'gallery' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/PingTrace' },
+    ]
+  },
+
+  {
+    id: 'seam',
+    title: 'SEAM - Custom ERP',
+    description: 'Custom ERP system for business operations.',
+    longDescription:
+      'A custom ERP system developed and sold to a local distributor, used by ~10 users. Includes inventory, finance, and reporting modules. Built with Django and React and deployed as a desktop application using Tauri.',
+    technologies: ['Django', 'React', 'PostgreSQL', 'Tauri', 'Python'],
+    tags: ['erp', 'business'],
+    status: 'completed',
+    featured: false,
+    year: 2025,
+    images: [
+      { url: '/projects/seam/login.png', type: 'hero' },
+    ],
+    highlights: [
+      'Commercially deployed system',
+      'Used in real business operations',
+      'Adapted to client infrastructure constraints',
+    ],
+  },
+
+  {
     id: 'armonic',
     title: 'ArmonicApp',
     description: 'Harmonic analysis and visualization tool.',
@@ -307,27 +348,6 @@ export const PROJECTS: Project[] = [
       'Efficient sampling to protect backend systems',
     ],
   },
-
-  {
-    id: 'seam',
-    title: 'SEAM - Custom ERP',
-    description: 'Custom ERP system for business operations.',
-    longDescription:
-      'A custom ERP system developed and sold to a local distributor, used by ~10 users. Includes inventory, finance, and reporting modules. Built with Django and React and deployed as a desktop application using Tauri.',
-    technologies: ['Django', 'React', 'PostgreSQL', 'Tauri', 'Python'],
-    tags: ['erp', 'business'],
-    status: 'completed',
-    featured: false,
-    year: 2025,
-    images: [
-      { url: '/projects/seam/login.png', type: 'hero' },
-    ],
-    highlights: [
-      'Commercially deployed system',
-      'Used in real business operations',
-      'Adapted to client infrastructure constraints',
-    ],
-  },
 ];
 
 export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
@@ -354,6 +374,7 @@ export const SKILLS: SkillCategory[] = [
       { id: 'python', name: 'Python (clean architecture, APIs)', category: 'language', proficiency: 'advanced' },
       { id: 'cpp', name: 'C/C++ (systems, memory, performance)', category: 'language', proficiency: 'intermediate' },
       { id: 'ts', name: 'TypeScript', category: 'language', proficiency: 'intermediate' },
+      { id: 'bash', name: 'Bash Scripting', category: 'language', proficiency: 'intermediate' },
       { id: 'rapid', name: 'ABB RAPID', category: 'language', proficiency: 'intermediate' },
     ],
   },
@@ -364,18 +385,20 @@ export const SKILLS: SkillCategory[] = [
     skills: [
       { id: 'django', name: 'Django / DRF (REST APIs)', category: 'framework', proficiency: 'advanced' },
       { id: 'qt', name: 'Qt / PySide6', category: 'framework', proficiency: 'intermediate' },
-      { id: 'react', name: 'React', category: 'framework', proficiency: 'intermediate' },
+      { id: 'react', name: 'React / Vite', category: 'framework', proficiency: 'intermediate' },
+      { id: 'platformio', name: 'PlatformIO (MCU development)', category: 'framework', proficiency: 'intermediate' },
     ],
   },
   {
     id: 'tools',
-    name: 'Tools',
+    name: 'Tools & Infrastructure',
     color: 'text-green-400',
     skills: [
       { id: 'git', name: 'Git & CI/CD', category: 'tool', proficiency: 'advanced' },
       { id: 'docker', name: 'Docker', category: 'tool', proficiency: 'intermediate' },
       { id: 'cmake', name: 'CMake', category: 'tool', proficiency: 'intermediate' },
       { id: 'linux', name: 'Linux (Ubuntu, Debian)', category: 'tool', proficiency: 'intermediate' },
+      { id: 'nginx', name: 'Nginx', category: 'tool', proficiency: 'intermediate' },
       { id: 'gcp', name: 'Google Cloud Platform', category: 'tool', proficiency: 'intermediate' },
       { id: 'cloudflare', name: 'Cloudflare', category: 'tool', proficiency: 'intermediate' },
       { id: 'cuda', name: 'CUDA', category: 'tool', proficiency: 'beginner' },
