@@ -1,6 +1,3 @@
-/* =========================
-   🔑 SHARED TYPES
-========================= */
 
 export type ID = string;
 
@@ -15,52 +12,51 @@ export type TechCategory =
   | 'database'
   | 'platform';
 
-/* =========================
-   🧭 SECTIONS (NEW 🔥)
-========================= */
-
-export type SectionId = 'about' | 'projects' | 'contact';
+export type SectionId = 'about' | 'experience' | 'projects' | 'contact';
 
 export interface Section {
   id: SectionId;
   label: string;
   description?: string;
 
-  // UI control (VERY useful later)
   order?: number;
   visible?: boolean;
 }
 
-/* =========================
-   🚀 PROJECTS (IMPROVED)
-========================= */
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+  type?: 'github' | 'demo' | 'docs' | 'video' | 'other';
+}
+
+export interface ProjectImage {
+  url: string;
+  alt?: string;
+  type?: 'hero' | 'gallery' | 'thumbnail';
+}
 
 export interface Project {
   id: ID;
   title: string;
+
   description: string;
   longDescription?: string;
 
-  technologies: string[]; // could evolve to Technology['id']
-  tags?: string[];        // 🔥 filtering & grouping
-  featured?: boolean;     // 🔥 UI highlight
+  technologies: string[];
+  tags?: string[];
 
-  image?: string;
+  featured?: boolean;
+  status: Status;
 
-  links: {
-    github?: string;
-    demo?: string;
-    website?: string;
-  };
+  images?: ProjectImage[];
+
+  links?: ProjectLink[];
 
   highlights?: string[];
 
-  status: Status;
+  year?: number;
 }
-
-/* =========================
-   🧠 TECHNOLOGY
-========================= */
 
 export interface Technology {
   id: ID;
@@ -73,27 +69,18 @@ export interface Technology {
 
   icon?: string;
 
-  // 🔥 UI enhancements
   color?: string;
 }
 
-/* =========================
-   🧩 SKILLS (IMPROVED)
-========================= */
 
 export interface SkillCategory {
   id: ID;
   name: string;
 
-  // 🔥 UI styling hook
   color?: string;
 
   skills: Technology[];
 }
-
-/* =========================
-   💼 EXPERIENCE
-========================= */
 
 export interface Experience {
   id: ID;
@@ -115,9 +102,6 @@ export interface Experience {
   technologies?: string[];
 }
 
-/* =========================
-   📬 CONTACT
-========================= */
 
 export interface ContactInfo {
   email: string;

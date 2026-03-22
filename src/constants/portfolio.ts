@@ -1,5 +1,5 @@
 import type { PortfolioContent, ContactInfo, Project, SkillCategory } from '@/types';
-
+import { get_asset } from '@/services/assets';
 
 export const OWNER = {
   name: 'Juan Sobalvarro',
@@ -22,115 +22,129 @@ export const SECTIONS = [
     description: 'Who I am and what I do',
     order: 1,
   },
+  // {
+  //   id: 'experience',
+  //   label: 'Experience',
+  //   description: 'My professional journey',
+  //   order: 2,
+  // },
   {
     id: 'projects',
     label: 'Projects',
-    description: 'Things I’ve built',
-    order: 2,
+    description: 'Things I have built',
+    order: 3,
   },
   {
     id: 'contact',
     label: 'Contact',
     description: 'Get in touch',
-    order: 3,
+    order: 4,
   },
 ] as const;
 
 export type SectionId = typeof SECTIONS[number]['id'];
 
-/* =========================
-   📬 CONTACT
-========================= */
 
 export const CONTACT_INFO: ContactInfo = {
   email: 'sobalvarrog.juans@gmail.com',
   github: 'https://github.com/JuanSobalvarro',
-  linkedin: 'https://linkedin.com/in/juansobalvarro',
+  linkedin: 'https://www.linkedin.com/in/juan-sobalvarro/',
   twitter: 'https://twitter.com/juansobalvarro',
-  website: 'https://portfolio.juso-software.com',
 };
 
-/* =========================
-   🚀 PROJECTS (IMPROVED)
-========================= */
 
 export const PROJECTS: Project[] = [
   {
     id: 'robert',
     title: 'RobeRT Middleware',
-    description: 'Middleware for controlling an ABB IRB 140T robotic arm.',
+
+    description: 'Middleware for controlling ABB robotic arms.',
     longDescription:
-      'C++ core with Python API, CI/CD pipeline with GitHub Actions and PyPI publishing.',
+      'C++ core with Python API, real-time control, and CI/CD pipeline for PyPI deployment.',
+
     technologies: ['C++', 'Python', 'RAPID', 'CI/CD'],
-    tags: ['robotics', 'backend', 'systems'],
-    featured: true,
-    links: {
-      github: 'https://github.com/JuanSobalvarro/RobeRT',
-      demo: '#',
-    },
+    tags: ['robotics', 'systems'],
+
     status: 'in-progress',
-  },
-  {
-    id: 'etheria',
-    title: 'Etheria',
-    description: 'Neural networks on microcontrollers.',
-    longDescription:
-      'C++ framework with Python bindings and CUDA acceleration.',
-    technologies: ['C++', 'Python', 'CUDA'],
-    tags: ['ai', 'embedded', 'performance'],
     featured: true,
-    links: {
-      github: '#',
-      demo: '#',
-    },
-    status: 'in-progress',
+    year: 2025,
+
+    images: [
+      { url: '/projects/robert/main.png', type: 'hero' },
+      { url: '/projects/robert/1.png', type: 'gallery' },
+      { url: '/projects/robert/2.png', type: 'gallery' },
+    ],
+
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/RobeRT', type: 'github' },
+      { label: 'Docs', url: '#', type: 'docs' },
+    ],
+
+    highlights: [
+      'Real-time robot communication',
+      'Python bindings over C++ core',
+      'CI/CD with GitHub Actions',
+    ],
   },
   {
     id: 'roboforger',
     title: 'RoboForger',
-    description: 'CAD → RAPID conversion tool.',
-    longDescription:
-      'Desktop app to generate RAPID code from CAD models.',
-    technologies: ['Python', 'PySide6'],
-    tags: ['robotics', 'desktop'],
-    featured: false,
-    links: {
-      github: '#',
-      demo: '#',
-    },
+    description: 'DXF/DWG to ABB RAPID code generator.',
+    longDescription: 'A tool that converts 2D CAD files into executable RAPID code for ABB robotic arms. using PySide6 for the GUI. The project is designed to streamline the programming of robotic arms for manufacturing tasks.',
+    technologies: ['Python', 'PySide6', 'RAPID'],
+    tags: ['robotics', 'tools'],
     status: 'completed',
+    featured: true,
+    year: 2025,
+    images: [
+      { url: 'https://github.com/JuanSobalvarro/RoboForger/blob/main/docs/ss_v2.1.png?raw=true', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/RoboForger', type: 'github' },
+    ],
+    highlights: [
+      'CAD to RAPID conversion',
+      'User-friendly PySide6 interface',
+    ],
   },
   {
     id: 'asismed',
     title: 'AsisMed ULSA',
-    description: 'Medical admin system.',
-    longDescription:
-      'Full-stack app for managing patient records.',
-    technologies: ['Django', 'React', 'TypeScript'],
-    tags: ['web', 'fullstack'],
-    featured: false,
-    links: {
-      github: '#',
-      demo: '#',
-    },
+    description: 'Medical management system for ULSA.',
+    longDescription: 'A comprehensive solution for managing medical records and patient data at ULSA. I worked as a lead full-stack developer, designing the database schema, implementing the backend API with Django, creating a user-friendly frontend interface, and deploying the application on a private network. The system is currently in use by the university clinic, streamlining operations and improving patient care.',
+    technologies: ['Python', 'Django', 'ReactJS', 'PostgreSQL'],
+    tags: ['healthcare'],
     status: 'completed',
-  },
+    featured: true,
+    year: 2024,
+    images: [
+      { url: '/projects/asismed/login.png', type: 'hero' },
+      { url: '/projects/asismed/dashboard.png', type: 'gallery' },
+      { url: '/projects/asismed/report.png', type: 'gallery' },
+    ],
+    links: [
+      { label: 'Official Notes', url: 'https://ulsa.edu.ni/index.php/440-ulsa-oficializa-asismed-como-proyecto-con-potencial-de-transferencia-tecnologica-desarrollado-por-estudiantes-de-ice', type: 'other' },
+      { label: 'Facebook', url: 'https://www.facebook.com/share/p/18T38EQdom/', type: 'other' },
+      { label: 'Instagram', url: 'https://www.instagram.com/p/DVUUwNmF3lG/', type: 'other' },
+    ],
+    highlights: [
+      'User-friendly interface for medical staff',
+      'Secure database management',
+    ],
+  }
 ];
 
-/* =========================
-   🧠 DERIVED DATA (VERY IMPORTANT 🔥)
-========================= */
-
-// Featured projects
 export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
 
-// Group projects by status
 export const PROJECTS_BY_STATUS = {
   completed: PROJECTS.filter(p => p.status === 'completed'),
   inProgress: PROJECTS.filter(p => p.status === 'in-progress'),
 };
 
-// Unique tech stack (for filters / UI)
+export const ALL_TAGS = Array.from(
+  new Set(PROJECTS.flatMap(p => p.tags ?? []))
+);
+
 export const ALL_TECH = Array.from(
   new Set(PROJECTS.flatMap(p => p.technologies))
 );

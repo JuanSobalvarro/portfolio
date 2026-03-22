@@ -1,34 +1,47 @@
-import React, { useMemo } from 'react';
-import { FEATURED_PROJECTS, PROJECTS } from '@/constants';
+import React, { useState } from 'react';
+import Section from './Section';
 import ProjectCard from './ProjectCard';
+import ProjectDetailView from './ProjectDetailView.tsx'; // New component
+import { PROJECTS } from '@/constants';
+import type { Project } from '@/types';
 
 export default function ProjectsSection(): React.JSX.Element {
-  const featuredIds = useMemo(
-    () => new Set(FEATURED_PROJECTS.map((project) => project.id)),
-    [],
-  );
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section className="mx-auto w-full max-w-6xl rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-sm md:p-10">
-      <div className="mb-6 space-y-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-white/50">Projects</p>
-        <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          Selected Work
-        </h2>
-        <p className="text-sm text-white/65">
-          A curated set of robotics, systems, and full-stack projects.
-        </p>
-      </div>
+    <Section>
+      {selectedProject ? (
+        <div className="section-fade-in">
+          <button 
+            onClick={() => setSelectedProject(null)}
+            className="mb-8 flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+          >
+            <span className="text-lg">←</span> Back to Projects
+          </button>
+          <ProjectDetailView project={selectedProject} />
+        </div>
+      ) : (
+        <div className="space-y-12">
+          <div className="space-y-2">
+            <p className="text-[10px] uppercase tracking-[0.5em] text-white/30 font-bold">
+              What defines me is what I create
+            </p>
+            <h2 className="text-4xl font-light tracking-tighter text-white md:text-6xl">
+              Projects
+            </h2>
+          </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {PROJECTS.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            featured={featuredIds.has(project.id)}
-          />
-        ))}
-      </div>
-    </section>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+            {PROJECTS.map((project) => (
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </Section>
   );
 }

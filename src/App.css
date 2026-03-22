@@ -1,17 +1,36 @@
 @import "tailwindcss";
 
 @keyframes sectionFadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(8px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
 }
 
 .section-fade-in {
-	animation: sectionFadeIn 320ms ease-out;
+  animation: sectionFadeIn 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Very thin */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Remove the background entirely */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Subtle white */
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4); /* Brighten on hover */
 }

@@ -24,11 +24,6 @@ export default function ContactSection(): React.JSX.Element {
       href: CONTACT_INFO.linkedin ?? '#',
       value: CONTACT_INFO.linkedin ?? 'N/A',
     },
-    {
-      label: 'Website',
-      href: CONTACT_INFO.website ?? '#',
-      value: CONTACT_INFO.website ?? 'N/A',
-    },
   ];
 
   return (
@@ -39,7 +34,7 @@ export default function ContactSection(): React.JSX.Element {
           Let&apos;s Build Something
         </h2>
         <p className="text-sm text-white/65">
-          Open to collaboration, product work, and robotics-focused engineering.
+          Open to collaboration and always excited to connect with fellow developers, potential clients, or anyone interested in tech. Feel free to reach out!
         </p>
       </div>
 

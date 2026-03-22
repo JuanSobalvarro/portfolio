@@ -1,8 +1,15 @@
 import React from 'react';
 import RotatingIcon from '@/components/RotatingCubeIcon';
+import Navigation from '@/components/Navigation.tsx';
 import { OWNER } from '@/constants';
+import type { SectionId } from '@/types';
 
-function Header(): React.JSX.Element {
+interface HeaderProps {
+  active: SectionId;
+  setActive: (section: SectionId) => void;
+}
+
+function Header({ active, setActive }: HeaderProps): React.JSX.Element {
   return (
     <header className="flex items-center justify-between px-6 py-4 md:px-10">
       <div className="flex items-center">
@@ -15,6 +22,7 @@ function Header(): React.JSX.Element {
           <p className="mt-1 text-sm text-white/70">By {OWNER.name}</p>
         </div>
       </div>
+      <Navigation active={active} setActive={setActive} />
     </header>
   );
 }
