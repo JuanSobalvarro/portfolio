@@ -9,7 +9,7 @@ export default function AboutSection(): React.JSX.Element {
       <div className="grid gap-12 md:grid-cols-[220px_1fr] md:items-center">
         <div className="mx-auto w-full max-w-[200px]">
           <div className="relative group">
-            {/* Soft glow that interacts with the glass */}
+            {/* soft glow that interacts with the glass */}
             <div className="absolute -inset-4 bg-white/30 blur-3xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
             
             <div className="relative rounded-2xl border border-white/5 bg-black/20 p-4 backdrop-blur-sm">
@@ -32,18 +32,17 @@ export default function AboutSection(): React.JSX.Element {
             {PORTFOLIO_CONTENT.bio}
           </p>
           
-          <p className="max-w-xl text-base leading-relaxed text-white/50 font-light">
+          <p className="max-w-xl text-base leading-relaxed text-white/70 font-light">
             {PORTFOLIO_CONTENT.message}
           </p>
         </div>
       </div>
 
-      {/* 🛠️ SKILLS GRID */}
       <div className="mt-16 border-t border-white/10 pt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {SKILLS.map((category) => (
             <div key={category.name} className="space-y-4">
-              <h2 className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-semibold">
+              <h2 className="text-[10px] uppercase tracking-[0.3em] text-blue-100/80 font-semibold">
                 {category.name}
               </h2>
               <div className="flex flex-wrap gap-x-5 gap-y-3">

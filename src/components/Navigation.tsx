@@ -35,7 +35,7 @@ export default function Navigation({
               >
                 {section.label}
                 <span
-                  className={`absolute bottom-1 left-4 right-4 h-px origin-left bg-white transition-transform duration-300 ${
+                  className={`absolute bottom-1 left-4 right-4 h-px origin-left bg-blue-500 transition-transform duration-300 ${
                     isActive ? 'scale-x-100' : 'scale-x-0'
                   }`}
                 />

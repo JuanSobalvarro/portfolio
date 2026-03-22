@@ -18,9 +18,9 @@ function Header({ active, setActive }: HeaderProps): React.JSX.Element {
         <div className="hidden sm:block"> {/* Hide name on very small screens to keep center clean */}
           <h1 className="flex items-center text-xl font-semibold tracking-tight text-white md:text-2xl">
             {OWNER.title}
-            <span className="ml-2 inline-block h-5 w-[2px] bg-white/70 animate-pulse" />
+            <span className="ml-2 inline-block h-5 w-[2px] bg-blue-200/90 animate-pulse" />
           </h1>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">By {OWNER.name}</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-blue-300/60">By {OWNER.name}</p>
         </div>
       </div>
 
