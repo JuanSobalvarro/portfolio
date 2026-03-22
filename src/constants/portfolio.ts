@@ -8,9 +8,9 @@ export const OWNER = {
 
 export const PORTFOLIO_CONTENT: PortfolioContent = {
   bio: OWNER.role,
-  specialization: 'ROBOTICS · SYSTEM ARCHITECTURE · FULL STACK',
+  specialization: 'ROBOTICS · EMBEDDED SYSTEMS · HIGH-PERFORMANCE SOFTWARE',
   message:
-    'Bridging hardware and software through efficient low-level execution and modern web interfaces.',
+    'I design and build high-performance systems at the intersection of robotics, embedded systems, and software architecture. My work focuses on real-time communication, efficient computation, and reliability, from low-level C++ robotic control to scalable backend systems. I follow engineering standards such as IEEE 830-1998, UML-based design, Agile methodologies, and clean coding practices to deliver robust and maintainable solutions.',
   ctaText: 'Explore My Work',
 };
 
@@ -21,12 +21,6 @@ export const SECTIONS = [
     description: 'Who I am and what I do',
     order: 1,
   },
-  // {
-  //   id: 'experience',
-  //   label: 'Experience',
-  //   description: 'My professional journey',
-  //   order: 2,
-  // },
   {
     id: 'projects',
     label: 'Projects',
@@ -43,7 +37,6 @@ export const SECTIONS = [
 
 export type SectionId = typeof SECTIONS[number]['id'];
 
-
 export const CONTACT_INFO: ContactInfo = {
   email: 'sobalvarrog.juans@gmail.com',
   github: 'https://github.com/JuanSobalvarro',
@@ -51,47 +44,40 @@ export const CONTACT_INFO: ContactInfo = {
   twitter: 'https://twitter.com/juansobalvarro',
 };
 
-
 export const PROJECTS: Project[] = [
   {
     id: 'robert',
     title: 'RobeRT Middleware',
-
-    description: 'Middleware for controlling ABB robotic arms. My graduation project :)',
+    description: 'Real-time middleware for controlling ABB robotic arms.',
     longDescription:
-      'C++ core with Python API, real-time control, and CI/CD pipeline for PyPI deployment. This allows us to administrate and control an ABB IRB 140 robotic arm.',
-
-    technologies: ['C++', 'Python', 'RAPID', 'CI/CD'],
-    tags: ['robotics', 'systems'],
-
+      'A client-server middleware for ABB robotic arms built with a high-performance C++ core. Uses raw TCP sockets for robot communication and ZeroMQ for messaging between services. Achieves <100ms command latency with a queued execution model that blocks RAPID execution for deterministic behavior. Includes multithreaded communication, synchronization, and industrial-oriented error handling. On disconnection, the robot safely returns to a zero position and resets to listen for new clients.',
+    technologies: ['C++', 'Python', 'RAPID', 'ZeroMQ', 'TCP/IP'],
+    tags: ['robotics', 'systems', 'embedded'],
     status: 'in-progress',
     featured: true,
     year: 2026,
-
-    images: [
-      // { url: '/projects/robert/main.png', type: 'hero' },
-      // { url: '/projects/robert/1.png', type: 'gallery' },
-      // { url: '/projects/robert/2.png', type: 'gallery' },
-    ],
-
+    images: [],
     links: [
       { label: 'GitHub Middleware', url: 'https://github.com/JuanSobalvarro/RobeRT', type: 'github' },
       { label: 'GitHub API', url: 'https://github.com/JuanSobalvarro/robert-py', type: 'github' },
     ],
-
     highlights: [
-      'Real-time robot communication',
-      'Python bindings over C++ core',
-      'CI/CD with GitHub Actions',
+      '<100ms command latency (network + processing)',
+      'Client-server architecture (TCP + ZeroMQ)',
+      'Thread-safe command queue with deterministic execution',
+      'Failure handling with safe robot reset strategy',
+      'Multithreaded communication and synchronization',
     ],
   },
+
   {
     id: 'roboforger',
     title: 'RoboForger',
     description: 'DXF/DWG to ABB RAPID code generator.',
-    longDescription: 'A tool that converts 2D CAD files into executable RAPID code for ABB robotic arms. using PySide6 for the GUI. The project is designed to streamline the programming of robotic arms for manufacturing tasks.',
+    longDescription:
+      'A desktop application that converts CAD files into executable RAPID programs for ABB robots. Reduced manual programming time from 2–3 hours to 5–15 minutes by automating path generation and code structure. Designed for practical industrial workflows with a PySide6 interface.',
     technologies: ['Python', 'PySide6', 'RAPID'],
-    tags: ['robotics', 'tools'],
+    tags: ['robotics', 'automation'],
     status: 'completed',
     featured: true,
     year: 2025,
@@ -102,17 +88,20 @@ export const PROJECTS: Project[] = [
       { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/RoboForger', type: 'github' },
     ],
     highlights: [
-      'CAD to RAPID conversion',
-      'User-friendly PySide6 interface',
+      'Reduced programming time from hours to minutes',
+      'Automated CAD → RAPID pipeline',
+      'Industrial-oriented desktop interface',
     ],
   },
+
   {
     id: 'asismed',
     title: 'AsisMed ULSA',
-    description: 'Medical management system for ULSA.',
-    longDescription: 'A comprehensive solution for managing medical records and patient data at ULSA. I worked as a lead full-stack developer, designing the database schema, implementing the backend API with Django, creating a user-friendly frontend interface, and deploying the application on a private network. The system is currently in use by the university clinic, streamlining operations and improving patient care.',
-    technologies: ['Docker Compose', 'Python', 'Django', 'ReactJS', 'PostgreSQL'],
-    tags: ['healthcare'],
+    description: 'Medical management system used in a university clinic.',
+    longDescription:
+      'A full-stack medical management system developed by a team of 5 developers where I led backend architecture and system design. Built with Django REST Framework and React, following Agile methodologies with sprint-based development across multiple courses. Reduced report generation from hours to minutes and is currently deployed in a clinical environment. Designed to scale for multi-user usage within a clinic.',
+    technologies: ['Docker', 'Python', 'Django', 'React', 'PostgreSQL'],
+    tags: ['healthcare', 'backend'],
     status: 'completed',
     featured: true,
     year: 2024,
@@ -123,57 +112,23 @@ export const PROJECTS: Project[] = [
     ],
     links: [
       { label: 'Official Notes', url: 'https://ulsa.edu.ni/index.php/440-ulsa-oficializa-asismed-como-proyecto-con-potencial-de-transferencia-tecnologica-desarrollado-por-estudiantes-de-ice', type: 'other' },
-      { label: 'Facebook', url: 'https://www.facebook.com/share/p/18T38EQdom/', type: 'other' },
-      { label: 'Instagram', url: 'https://www.instagram.com/p/DVUUwNmF3lG/', type: 'other' },
     ],
     highlights: [
-      'User-friendly interface for medical staff',
-      'Secure database management',
+      'Reduced reporting time from hours to minutes',
+      'Led backend architecture in 5-person team',
+      'REST API with Django REST Framework',
+      'Agile development (sprints, iterative delivery)',
+      'Deployed and actively used system',
     ],
   },
-  {
-    id: 'ranking',
-    title: 'Table Tennis Ranking System',
-    description: 'A ranking system for university table tennis players.',
-    longDescription: 'A web application that allows university table tennis players to track their rankings and match history. I developed the backend using Django, created a responsive frontend with ReactJS, and implemented features such as player profiles, match recording, and dynamic ranking calculations based on match outcomes.',
-    technologies: ['Python', 'Django', 'ReactJS', 'PostgreSQL'],
-    tags: ['sports', 'webapp'],
-    status: 'completed',
-    featured: false,
-    year: 2024,
-    images: [
-      { url: '/projects/ttranking/home.png', type: 'hero' },
-      { url: '/projects/ttranking/profile.png', type: 'gallery' },
-      { url: '/projects/ttranking/ranking.png', type: 'gallery' },
-      { url: '/projects/ttranking/top.png', type: 'gallery' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/tt-ranking-system' },
-    ]
-  },
-  {
-    id: 'sudoku',
-    title: 'Sudoku Qt',
-    description: 'A Sudoku game built with Qt5.',
-    longDescription: 'A desktop application that I created using C++ and the Qt5 framework when I was first learning C++. The game features simple mechanics to generate and solve a Sudoku puzzle.',
-    technologies: ['C++', 'Qt5'],
-    tags: ['games', 'desktop'],
-    status: 'completed',
-    featured: false,
-    year: 2024,
-    images: [
-      { url: '/projects/sudoku/sudoku.png', type: 'hero' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/SudokuQt' },
-    ]
-  },
+  
   {
     id: 'ecollecta',
     title: 'Ecollecta',
-    description: 'A static website for university species collection with physical QR on specimens.',
-    longDescription: 'Minimal version of a design of an App where i simplified the data collection processs for the univsity species collection. The website is static and serves as a digital catalog for the specimens, which are tagged with QR codes that link to their respective pdfs on the site.',
-    technologies: ['ReactTS', 'Github Pages'],
+    description: 'Digital catalog for university species collection.',
+    longDescription:
+      'A static web platform that digitizes a university species collection using QR codes. Currently deployed with ~30 species and designed to support ~1500 users. Focused on accessibility, simplicity, and scalable static delivery.',
+    technologies: ['React', 'TypeScript', 'GitHub Pages'],
     tags: ['webapp', 'nature'],
     status: 'in-progress',
     featured: true,
@@ -189,29 +144,14 @@ export const PROJECTS: Project[] = [
       { label: 'Live Site', url: 'https://programming-club-ulsa.github.io/ecollecta-minimal/' },
     ]
   },
-  {
-    id: 'parametric',
-    title: 'ParametricSim',
-    description: 'My first project: a parametric equation drawer built with python, turtle and tkinter.',
-    longDescription: 'A simple desktop application that allows users to input parametric equations and visualize them using Python turtle graphics. The app features a basic GUI built with Tkinter, where users can enter their equations and see the resulting graph. Do not judge this one too hard, it was my first project and I was just learning how to code :)',
-    technologies: ['Python', 'Tkinter', 'Turtle'],
-    tags: ['math', 'desktop'],
-    status: 'completed',
-    featured: false,
-    year: 2022,
-    images: [
-      { url: '/projects/parametric/parametricsim.gif', type: 'hero' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/juansobalvarro/parametricsim' },
-    ]
-  },
+
   {
     id: 'consultores',
     title: 'Sobalvarro Consultores',
-    description: 'A website for a construction supervision company in San Pedro Sula, Honduras.',
-    longDescription: 'A simple website for a construction supervision company in San Pedro Sula, Honduras. The site features a modern design and is optimized for both desktop and mobile devices.',
-    technologies: ['ReactTS', 'Github Actions'],
+    description: 'Corporate website for a construction company.',
+    longDescription:
+      'A responsive website built for a construction supervision company. Focused on performance, accessibility, and modern UI across devices.',
+    technologies: ['React', 'TypeScript', 'GitHub Actions'],
     tags: ['web', 'construction'],
     status: 'completed',
     featured: true,
@@ -224,11 +164,116 @@ export const PROJECTS: Project[] = [
       { label: 'Website', url: 'https://www.sobalvarroconsultores.com/' },
     ]
   },
+
+  {
+    id: 'etheria',
+    title: 'Etheria',
+    description: 'Custom neural network framework for edge systems.',
+    longDescription:
+      'A proof-of-concept neural network framework built from scratch in C++ with CUDA support. Implements custom tensors, CPU/GPU separation, and full backpropagation using stochastic gradient descent. Focused on memory management, performance tradeoffs, and low-level computation design.',
+    technologies: ['C++', 'CUDA', 'Pybind11', 'Python'],
+    tags: ['ai', 'systems'],
+    status: 'in-progress',
+    featured: true,
+    year: 2025,
+    images: [
+      { url: '/projects/etheria/performance.jpeg', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/etheria' },
+    ],
+    highlights: [
+      'Custom tensor implementation',
+      'CPU/GPU memory separation',
+      'Backpropagation with SGD',
+      'Exploration of performance tradeoffs',
+    ],
+  },
+
+  {
+    id: 'armonic',
+    title: 'ArmonicApp',
+    description: 'Harmonic analysis and visualization tool.',
+    longDescription:
+      'A desktop application for analyzing audio signals using Fourier transforms. Provides visualization of frequency spectra and is being developed in both Python and C++ versions.',
+    technologies: ['C++', 'Qt', 'FFT', 'Python'],
+    tags: ['audio', 'analysis'],
+    status: 'in-progress',
+    featured: false,
+    year: 2023,
+    images: [],
+    links: [
+      { label: 'GitHub Python', url: 'https://github.com/JuanSobalvarro/armonicapp' },
+      { label: 'GitHub C++', url: 'https://github.com/JuanSobalvarro/armonicappcpp' },
+    ]
+  },
+
+  {
+    id: 'ranking',
+    title: 'Table Tennis Ranking System',
+    description: 'Ranking system for university players.',
+    longDescription:
+      'A web platform for managing player rankings, match history, and statistics. Built with Django and React, implementing dynamic ranking calculations and real-time updates based on match outcomes.',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    tags: ['sports', 'webapp'],
+    status: 'completed',
+    featured: false,
+    year: 2024,
+    images: [
+      { url: '/projects/ttranking/home.png', type: 'hero' },
+      { url: '/projects/ttranking/profile.png', type: 'gallery' },
+      { url: '/projects/ttranking/ranking.png', type: 'gallery' },
+      { url: '/projects/ttranking/top.png', type: 'gallery' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/tt-ranking-system' },
+    ]
+  },
+
+  {
+    id: 'parametric',
+    title: 'ParametricSim',
+    description: 'Parametric equation visualizer.',
+    longDescription:
+      'A desktop tool for visualizing parametric equations using Python turtle graphics. Early project exploring mathematical visualization and GUI development.',
+    technologies: ['Python', 'Tkinter', 'Turtle'],
+    tags: ['math', 'desktop'],
+    status: 'completed',
+    featured: false,
+    year: 2022,
+    images: [
+      { url: '/projects/parametric/parametricsim.gif', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/juansobalvarro/parametricsim' },
+    ]
+  },
+
+  {
+    id: 'sudoku',
+    title: 'Sudoku Qt',
+    description: 'Sudoku game built with Qt.',
+    longDescription:
+      'A desktop application developed in C++ using Qt, implementing puzzle generation and solving logic. Early project focused on object-oriented design and GUI architecture.',
+    technologies: ['C++', 'Qt'],
+    tags: ['games', 'desktop'],
+    status: 'completed',
+    featured: false,
+    year: 2024,
+    images: [
+      { url: '/projects/sudoku/sudoku.png', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/SudokuQt' },
+    ]
+  },
+
   {
     id: 'cavipy',
     title: 'Cavipy',
-    description: 'A small python tool to demonstrate the use of Monte Carlo method for cavity volume estimation.',
-    longDescription: 'A small python tool to demonstrate the use of Monte Carlo method for cavity volume estimation. The tool generates a 3D grid of points and checks which ones are inside the cavity, then uses the ratio of points inside to total points to estimate the volume.',
+    description: 'Monte Carlo cavity volume estimator.',
+    longDescription:
+      'A Python-based simulation tool that estimates cavity volumes using Monte Carlo methods. Demonstrates probabilistic modeling and 3D spatial computation.',
     technologies: ['Python', 'Vispy', 'NumPy'],
     tags: ['math', 'simulation'],
     status: 'completed',
@@ -241,75 +286,48 @@ export const PROJECTS: Project[] = [
       { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/Cavipy' },
     ]
   },
+
   {
     id: 'domotic',
     title: 'Domotic System',
-    description: 'A power monitoring and control system for power consumption devices in a household.',
-    longDescription: 'A power monitoring and control system for power consumption devices in a household. The system consists of a ESP32 that collects data from a power sensor and provides a web interface to monitor and control the devices (relays).',
+    description: 'Embedded IoT system for power monitoring.',
+    longDescription:
+      'An embedded system using ESP32 for real-time power monitoring and control. Samples data every 2 seconds and applies averaging to reduce noise and prevent database overload. Provides a web interface for monitoring and device control.',
     technologies: ['Python', 'ESP32', 'Flask'],
-    tags: ['iot', 'home'],
+    tags: ['iot', 'embedded'],
     status: 'completed',
     featured: false,
     year: 2025,
     images: [
       { url: '/projects/domotic/dashboard.jpeg', type: 'hero' },
     ],
+    highlights: [
+      'Real-time data acquisition',
+      'Noise reduction via averaging strategy',
+      'Efficient sampling to protect backend systems',
+    ],
   },
+
   {
     id: 'seam',
     title: 'SEAM - Custom ERP',
-    description: 'A custom ERP system sold for a local business.',
-    longDescription: 'A custom ERP system for a local business. The system includes modules for inventory management, finance, and report generation. I developed the backend using Django and created a responsive frontend with ReactTS deploying it with tauri for a local desktop app.',
-    technologies: ['DRF', 'ReactTS', 'PostgreSQL','Tauri', 'Python', 'INNO Setup'],
+    description: 'Custom ERP system for business operations.',
+    longDescription:
+      'A custom ERP system developed and sold to a local distributor, used by ~10 users. Includes inventory, finance, and reporting modules. Built with Django and React and deployed as a desktop application using Tauri.',
+    technologies: ['Django', 'React', 'PostgreSQL', 'Tauri', 'Python'],
     tags: ['erp', 'business'],
     status: 'completed',
     featured: false,
     year: 2025,
     images: [
       { url: '/projects/seam/login.png', type: 'hero' },
-      { url: '/projects/seam/dashboard.png', type: 'gallery' },
-      { url: '/projects/seam/inventory.png', type: 'gallery' },
-    ]
-  },
-  {
-    id: 'etheria',
-    title: 'Etheria',
-    description: 'Proof of Concept neural network framework for Edge AI applications.',
-    longDescription: 'Etheria is a lightweight neural network framework designed for efficient deployment of AI models on edge devices. Using CUDA for GPU acceleration, tensors, c++ and pybind11 for Python bindings, and building entirely from scratch math operations.',
-    technologies: ['C++', 'CUDA', 'Pybind11', 'Python'],
-    tags: ['ai', 'edge'],
-    status: 'in-progress',
-    featured: true,
-    year: 2025,
-    images: [
-      { url: '/projects/etheria/performance.jpeg', type: 'hero' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/etheria' },
     ],
     highlights: [
-      'Custom tensor library',
-      'CUDA-accelerated operations',
-      'Python bindings with Pybind11',
+      'Commercially deployed system',
+      'Used in real business operations',
+      'Adapted to client infrastructure constraints',
     ],
   },
-  {
-    id: 'armonic',
-    title: 'ArmonicApp',
-    description: 'Harmonic analysis and visualization tool for sounds.',
-    longDescription: 'ArmonicApp is a desktop application that allows users to analyze and visualize the harmonic content of audio files. A Python version is being rewritten with Qt and C++, the app provides an intuitive interface for opening an audio buffer, performing Fourier analysis, and displaying the resulting frequency spectrum in a graph.',
-    technologies: ['C++', 'Qt', 'FFT', 'Python'],
-    tags: ['audio', 'analysis'],
-    status: 'in-progress',
-    featured: false,
-    year: 2023,
-    images: [
-    ],
-    links: [
-      { label: 'GitHub Python', url: 'https://github.com/JuanSobalvarro/armonicapp' },
-      { label: 'GitHub C++', url: 'https://github.com/JuanSobalvarro/armonicappcpp' },
-    ]
-  }
 ];
 
 export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
@@ -333,20 +351,20 @@ export const SKILLS: SkillCategory[] = [
     name: 'Languages',
     color: 'text-blue-400',
     skills: [
-      { id: 'cpp', name: 'C++', category: 'language', proficiency: 'advanced' },
-      { id: 'python', name: 'Python', category: 'language', proficiency: 'advanced' },
-      { id: 'ts', name: 'TypeScript', category: 'language', proficiency: 'advanced' },
-      { id: 'rapid', name: 'RAPID', category: 'language', proficiency: 'intermediate' },
+      { id: 'python', name: 'Python (clean architecture, APIs)', category: 'language', proficiency: 'advanced' },
+      { id: 'cpp', name: 'C/C++ (systems, memory, performance)', category: 'language', proficiency: 'intermediate' },
+      { id: 'ts', name: 'TypeScript', category: 'language', proficiency: 'intermediate' },
+      { id: 'rapid', name: 'ABB RAPID', category: 'language', proficiency: 'intermediate' },
     ],
   },
   {
     id: 'frameworks',
-    name: 'Frameworks',
+    name: 'Frameworks & Libraries',
     color: 'text-purple-400',
     skills: [
-      { id: 'react', name: 'React', category: 'framework', proficiency: 'advanced' },
-      { id: 'django', name: 'Django / DRF', category: 'framework', proficiency: 'advanced' },
-      { id: 'pyside', name: 'PySide6', category: 'framework', proficiency: 'intermediate' },
+      { id: 'django', name: 'Django / DRF (REST APIs)', category: 'framework', proficiency: 'advanced' },
+      { id: 'qt', name: 'Qt / PySide6', category: 'framework', proficiency: 'intermediate' },
+      { id: 'react', name: 'React', category: 'framework', proficiency: 'intermediate' },
     ],
   },
   {
@@ -355,8 +373,14 @@ export const SKILLS: SkillCategory[] = [
     color: 'text-green-400',
     skills: [
       { id: 'git', name: 'Git & CI/CD', category: 'tool', proficiency: 'advanced' },
-      { id: 'cuda', name: 'CUDA', category: 'tool', proficiency: 'intermediate' },
-      { id: 'vite', name: 'Vite', category: 'tool', proficiency: 'advanced' },
+      { id: 'docker', name: 'Docker', category: 'tool', proficiency: 'intermediate' },
+      { id: 'cmake', name: 'CMake', category: 'tool', proficiency: 'intermediate' },
+      { id: 'linux', name: 'Linux (Ubuntu, Debian)', category: 'tool', proficiency: 'intermediate' },
+      { id: 'gcp', name: 'Google Cloud Platform', category: 'tool', proficiency: 'intermediate' },
+      { id: 'cloudflare', name: 'Cloudflare', category: 'tool', proficiency: 'intermediate' },
+      { id: 'cuda', name: 'CUDA', category: 'tool', proficiency: 'beginner' },
+      { id: 'tauri', name: 'Tauri', category: 'tool', proficiency: 'beginner' },
+      { id: 'inno', name: 'Inno Setup', category: 'tool', proficiency: 'beginner' },
     ],
   },
 ];

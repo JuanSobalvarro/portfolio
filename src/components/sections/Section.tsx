@@ -6,7 +6,7 @@ interface SectionProps {
 
 export default function Section({ children }: SectionProps): React.JSX.Element {
   return (
-    <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center">
+    <div className="relative w-full max-w-7xl mx-auto flex items-center justify-center">
       
       <div className="relative w-full max-h-full md:max-h-[80vh] rounded-2xl md:rounded-[2.5rem] p-[1px] overflow-hidden">
         
