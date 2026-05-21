@@ -166,28 +166,44 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: 'etheria',
-    title: 'Etheria',
-    description: 'Custom neural network framework for edge systems.',
+    id: 'parametric',
+    title: 'ParametricSim',
+    description: 'Parametric equation visualizer.',
     longDescription:
-      'A proof-of-concept neural network framework built from scratch in C++ with CUDA support. Implements custom tensors, CPU/GPU separation, and full backpropagation using stochastic gradient descent. Focused on memory management, performance tradeoffs, and low-level computation design.',
-    technologies: ['C++', 'CUDA', 'Pybind11', 'Python'],
-    tags: ['ai', 'systems'],
-    status: 'in-progress',
-    featured: true,
-    year: 2025,
+      'A desktop tool for visualizing parametric equations using Python turtle graphics. Early project exploring mathematical visualization and GUI development.',
+    technologies: ['Python', 'Tkinter', 'Turtle'],
+    tags: ['math', 'desktop'],
+    status: 'completed',
+    featured: false,
+    year: 2022,
     images: [
-      { url: '/projects/etheria/performance.jpeg', type: 'hero' },
+      { url: '/projects/parametric/parametricsim.gif', type: 'hero' },
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/etheria' },
+      { label: 'GitHub', url: 'https://github.com/juansobalvarro/parametricsim' },
+    ]
+  },
+
+  {
+    id: 'ranking',
+    title: 'Table Tennis Ranking System',
+    description: 'Ranking system for university players.',
+    longDescription:
+      'A web platform for managing player rankings, match history, and statistics. Built with Django and React, implementing dynamic ranking calculations and real-time updates based on match outcomes.',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    tags: ['sports', 'webapp'],
+    status: 'completed',
+    featured: false,
+    year: 2024,
+    images: [
+      { url: '/projects/ttranking/home.png', type: 'hero' },
+      { url: '/projects/ttranking/profile.png', type: 'gallery' },
+      { url: '/projects/ttranking/ranking.png', type: 'gallery' },
+      { url: '/projects/ttranking/top.png', type: 'gallery' },
     ],
-    highlights: [
-      'Custom tensor implementation',
-      'CPU/GPU memory separation',
-      'Backpropagation with SGD',
-      'Exploration of performance tradeoffs',
-    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/tt-ranking-system' },
+    ]
   },
 
   {
@@ -237,56 +253,17 @@ export const PROJECTS: Project[] = [
     description: 'Harmonic analysis and visualization tool.',
     longDescription:
       'A desktop application for analyzing audio signals using Fourier transforms. Provides visualization of frequency spectra and is being developed in both Python and C++ versions.',
-    technologies: ['C++', 'Qt', 'FFT', 'Python'],
+    technologies: ['Tkinter', 'FFT', 'Python'],
     tags: ['audio', 'analysis'],
-    status: 'in-progress',
+    status: 'completed',
     featured: false,
     year: 2023,
-    images: [],
+    images: [
+      { url: '/projects/armonic/view.png', type: 'hero' },
+    ],
     links: [
       { label: 'GitHub Python', url: 'https://github.com/JuanSobalvarro/armonicapp' },
       { label: 'GitHub C++', url: 'https://github.com/JuanSobalvarro/armonicappcpp' },
-    ]
-  },
-
-  {
-    id: 'ranking',
-    title: 'Table Tennis Ranking System',
-    description: 'Ranking system for university players.',
-    longDescription:
-      'A web platform for managing player rankings, match history, and statistics. Built with Django and React, implementing dynamic ranking calculations and real-time updates based on match outcomes.',
-    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
-    tags: ['sports', 'webapp'],
-    status: 'completed',
-    featured: false,
-    year: 2024,
-    images: [
-      { url: '/projects/ttranking/home.png', type: 'hero' },
-      { url: '/projects/ttranking/profile.png', type: 'gallery' },
-      { url: '/projects/ttranking/ranking.png', type: 'gallery' },
-      { url: '/projects/ttranking/top.png', type: 'gallery' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/tt-ranking-system' },
-    ]
-  },
-
-  {
-    id: 'parametric',
-    title: 'ParametricSim',
-    description: 'Parametric equation visualizer.',
-    longDescription:
-      'A desktop tool for visualizing parametric equations using Python turtle graphics. Early project exploring mathematical visualization and GUI development.',
-    technologies: ['Python', 'Tkinter', 'Turtle'],
-    tags: ['math', 'desktop'],
-    status: 'completed',
-    featured: false,
-    year: 2022,
-    images: [
-      { url: '/projects/parametric/parametricsim.gif', type: 'hero' },
-    ],
-    links: [
-      { label: 'GitHub', url: 'https://github.com/juansobalvarro/parametricsim' },
     ]
   },
 
@@ -307,6 +284,31 @@ export const PROJECTS: Project[] = [
     links: [
       { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/SudokuQt' },
     ]
+  },
+
+  {
+    id: 'etheria',
+    title: 'Etheria',
+    description: 'Custom neural network framework for edge systems.',
+    longDescription:
+      'A proof-of-concept neural network framework built from scratch in C++ with CUDA support. Implements custom tensors, CPU/GPU separation, and full backpropagation using stochastic gradient descent. Focused on memory management, performance tradeoffs, and low-level computation design.',
+    technologies: ['C++', 'CUDA', 'Pybind11', 'Python'],
+    tags: ['ai', 'systems'],
+    status: 'completed',
+    featured: true,
+    year: 2025,
+    images: [
+      { url: '/projects/etheria/performance.jpeg', type: 'hero' },
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/JuanSobalvarro/etheria' },
+    ],
+    highlights: [
+      'Custom tensor implementation',
+      'CPU/GPU memory separation',
+      'Backpropagation with SGD',
+      'Exploration of performance tradeoffs',
+    ],
   },
 
   {
@@ -348,6 +350,23 @@ export const PROJECTS: Project[] = [
       'Efficient sampling to protect backend systems',
     ],
   },
+  {
+    id: 'colpoapp',
+    title: 'ColpoApp',
+    description: 'Desktop Application for Colposcopy Reports generation.',
+    longDescription:
+      'A desktop application built with PySide6 that generates colposcopy reports based on user input. The application provides a user-friendly interface for medical professionals to input patient data and examination results, which are then compiled into a structured report format.',
+    technologies: ['Python', 'PySide6', 'nuitka', 'weasyprint', 'inno setup', 'sqlite'],
+    tags: ['healthcare', 'desktop'],
+    status: 'completed',
+    featured: false,
+    year: 2026,
+    images: [
+      { url: '/projects/colpoapp/reports.png', type: 'hero' },
+      { url: '/projects/colpoapp/patients.png', type: 'gallery' },
+      { url: '/projects/colpoapp/dashboard.png', type: 'gallery' },
+    ]
+  }
 ];
 
 export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
