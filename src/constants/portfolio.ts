@@ -259,7 +259,7 @@ export const PROJECTS: Project[] = [
     featured: false,
     year: 2023,
     images: [
-      { url: '/projects/armonic/view.png', type: 'hero' },
+      { url: '/projects/armonicapp/view.png', type: 'hero' },
     ],
     links: [
       { label: 'GitHub Python', url: 'https://github.com/JuanSobalvarro/armonicapp' },
