@@ -53,10 +53,12 @@ export const PROJECTS: Project[] = [
       'A client-server middleware for ABB robotic arms built with a high-performance C++ core. Uses raw TCP sockets for robot communication and ZeroMQ for messaging between services. Achieves <100ms command latency with a queued execution model that blocks RAPID execution for deterministic behavior. Includes multithreaded communication, synchronization, and industrial-oriented error handling. On disconnection, the robot safely returns to a zero position and resets to listen for new clients.',
     technologies: ['C++', 'Python', 'RAPID', 'ZeroMQ', 'TCP/IP'],
     tags: ['robotics', 'systems', 'embedded'],
-    status: 'in-progress',
+    status: 'completed',
     featured: true,
     year: 2026,
-    images: [],
+    images: [
+      { url: 'projects/robert/robot.png', type: 'hero' },
+    ],
     links: [
       { label: 'GitHub Middleware', url: 'https://github.com/JuanSobalvarro/RobeRT', type: 'github' },
       { label: 'GitHub API', url: 'https://github.com/JuanSobalvarro/robert-py', type: 'github' },
@@ -91,6 +93,52 @@ export const PROJECTS: Project[] = [
       'Reduced programming time from hours to minutes',
       'Automated CAD → RAPID pipeline',
       'Industrial-oriented desktop interface',
+    ],
+  },
+  {
+    id: 'twinengineinventory',
+    title: 'TwinEngine Inventory',
+    description: 'Inventory management system for a local coffee factory.',
+    longDescription:
+      'A web-based inventory management system for a local coffee factory. Built with Django and React, it provides real-time tracking of stock levels, order management, and reporting features. The system is designed to be user-friendly and scalable, allowing the factory to efficiently manage its inventory and streamline operations.',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    tags: ['webapp', 'inventory'],
+    status: 'completed',
+    featured: true,
+    year: 2026,
+    images: [
+      { url: '/projects/twinengineinventory/inventory.png', type: 'hero' },
+    ],
+    links: [
+      { label: 'WebSite', url: 'https://twinenginecoffee.com' },
+    ],
+    highlights: [
+      'Real-time inventory tracking',
+      'Web-based interface with Django and React',
+      'Scalable architecture for growing businesses',
+    ],
+  },
+
+  {
+    id: 'transferandpaymentbusiness',
+    title: 'Money transfer and Payment business',
+    description: 'Web platform for a local money transfer and payment business.',
+    longDescription:
+      'A web platform for a local money transfer and payment business. Built with Django and React, it helps the business to manage transactions, keep track of customers and cash flow.',
+    technologies: ['Python', 'Django', 'React', 'PostgreSQL'],
+    tags: ['webapp', 'finance'],
+    status: 'completed',
+    featured: false,
+    year: 2026,
+    images: [
+      { url: '/projects/rym/logo.png', type: 'hero' },
+    ],
+    links: [
+    ],
+    highlights: [
+      'Real-time transaction management',
+      'Web-based interface with Django and React',
+      'Scalable architecture for growing businesses',
     ],
   },
 
@@ -130,7 +178,7 @@ export const PROJECTS: Project[] = [
       'A static web platform that digitizes a university species collection using QR codes. Currently deployed with ~30 species and designed to support ~1500 users. Focused on accessibility, simplicity, and scalable static delivery.',
     technologies: ['React', 'TypeScript', 'GitHub Pages'],
     tags: ['webapp', 'nature'],
-    status: 'in-progress',
+    status: 'completed',
     featured: true,
     year: 2026,
     images: [
